@@ -54,7 +54,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
             timerLabel.text = "Time: \(currentTime)"
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -65,8 +65,6 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
         }
         
         let location = recognizer.locationInView(imageView)
-        print("x: \(location.x), y: \(location.y)")
-        
         if  (
                 imageID == 0 &&
                 location.x >= 615 &&
@@ -92,11 +90,24 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
         }
         
         let currentTime = Float(NSDate.timeIntervalSinceReferenceDate() - startTime)
+
+        let alert = UIAlertController(title: "C'est gagné !", message: "Vous avez trouvé le Cage en \(currentTime) secondes.", preferredStyle: .Alert)
         
-        let alert = UIAlertController(title: "C'est gagné !", message: "Vous avez trouvé le Cage en \(currentTime) secondes.", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+        let saveAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { (_) in
+            let nameField = alert.textFields![0] as UITextField
+
+            Score.saveScore(Score(name: nameField.text!, time: currentTime))
             self.navigationController?.popToRootViewControllerAnimated(true)
-        }))
+        })
+        
+        alert.addTextFieldWithConfigurationHandler({ (field) in
+            field.placeholder = "Nom"
+            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: field, queue: NSOperationQueue.mainQueue()) { (notification) in
+                saveAction.enabled = field.text != ""
+            }
+        })
+        
+        alert.addAction(saveAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
