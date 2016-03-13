@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13F04661C95ECC30096F5DA /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F04651C95ECC30096F5DA /* ReplaceSegue.swift */; };
 		F185F4C01C71CCC800D7FCFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185F4BF1C71CCC800D7FCFB /* AppDelegate.swift */; };
 		F185F4C21C71CCC800D7FCFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185F4C11C71CCC800D7FCFB /* ViewController.swift */; };
 		F185F4C51C71CCC800D7FCFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F185F4C31C71CCC800D7FCFB /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F13F04651C95ECC30096F5DA /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
 		F185F4BC1C71CCC800D7FCFB /* Find the Cage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find the Cage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F185F4BF1C71CCC800D7FCFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F185F4C11C71CCC800D7FCFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				F185F4ED1C71F07B00D7FCFB /* GameViewController.swift */,
 				F1DDC0EC1C95D6B300020DA6 /* Score.swift */,
 				F1DDC0EE1C95D8D700020DA6 /* HighscoreController.swift */,
+				F13F04651C95ECC30096F5DA /* ReplaceSegue.swift */,
 			);
 			path = "Find the Cage";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				F185F4C21C71CCC800D7FCFB /* ViewController.swift in Sources */,
 				F1DDC0EF1C95D8D700020DA6 /* HighscoreController.swift in Sources */,
+				F13F04661C95ECC30096F5DA /* ReplaceSegue.swift in Sources */,
 				F185F4EE1C71F07B00D7FCFB /* GameViewController.swift in Sources */,
 				F1DDC0ED1C95D6B400020DA6 /* Score.swift in Sources */,
 				F185F4C01C71CCC800D7FCFB /* AppDelegate.swift in Sources */,

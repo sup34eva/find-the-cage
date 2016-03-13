@@ -97,7 +97,7 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
             let nameField = alert.textFields![0] as UITextField
 
             Score.saveScore(Score(name: nameField.text!, time: currentTime))
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.performSegueWithIdentifier("endGame", sender: nil)
         })
         
         alert.addTextFieldWithConfigurationHandler({ (field) in

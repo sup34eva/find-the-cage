@@ -100,6 +100,7 @@
                         <outlet property="scrollView" destination="9mQ-PA-8Qb" id="Kra-vD-8Tw"/>
                         <outlet property="timerLabel" destination="kOM-7S-GyG" id="iJt-dr-NAc"/>
                         <outlet property="view" destination="9mQ-PA-8Qb" id="39P-DU-HxR"/>
+                        <segue destination="m1T-IE-KJ7" kind="custom" identifier="endGame" customClass="ReplaceSegue" id="Uwx-x7-DT9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scm-VB-dZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,7 +134,7 @@
             <objects>
                 <tableViewController title="Leaderboard" id="m1T-IE-KJ7" customClass="HighscoreController" customModule="Find_the_Cage" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="z7j-2M-PWA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -177,4 +178,7 @@
     <resources>
         <image name="Cage" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Uwx-x7-DT9"/>
+    </inferredMetricsTieBreakers>
 </document>
