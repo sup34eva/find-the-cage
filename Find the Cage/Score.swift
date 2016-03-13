@@ -37,7 +37,7 @@ class Score: NSObject, NSCoding {
         }
         
         scores.append(score)
-        let newScores = Array(scores.sort({ $0.time > $1.time }).prefix(10))
+        let newScores = Array(scores.sort({ $0.time < $1.time }).prefix(10))
         
         let success = NSKeyedArchiver.archiveRootObject(newScores, toFile: Score.ArchiveURL.path!)
         if !success {
