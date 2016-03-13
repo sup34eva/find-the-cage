@@ -2,12 +2,12 @@
 //  ViewController.swift
 //  Find the Cage
 //
-//  Created by Supinfo on 15/02/16.
 //  Copyright © 2016 Ascenceur. All rights reserved.
 //
 
 import UIKit
 
+// Controleur basique pour le menu
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,4 +17,3 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
-
