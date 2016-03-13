@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
+    var imageID: Int = 0
     var isLocked: Bool = false
     var timer: NSTimer? = nil
     var startTime: Double = 0
@@ -21,7 +22,13 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image: UIImage = UIImage(named: "photo1")!
+        let image: UIImage
+        if arc4random_uniform(2) == 0 {
+            image = UIImage(named: "photo1")!
+        } else {
+            image = UIImage(named: "photo2")!
+            imageID = 1
+        }
 
         imageView.image = image
         imageView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: image.size)
@@ -58,10 +65,21 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
         }
         
         let location = recognizer.locationInView(imageView)
-        if  location.x >= 615 &&
-            location.x <= 635 &&
-            location.y >= 645 &&
-            location.y <= 670 {
+        print("x: \(location.x), y: \(location.y)")
+        
+        if  (
+                imageID == 0 &&
+                location.x >= 615 &&
+                location.x <= 635 &&
+                location.y >= 645 &&
+                location.y <= 670
+            ) || (
+                imageID == 1 &&
+                location.x >= 1140 &&
+                location.x <= 1165 &&
+                location.y >= 315 &&
+                location.y <= 355
+            ) {
             win()
         } else {
             lock()
