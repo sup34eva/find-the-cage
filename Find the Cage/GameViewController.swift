@@ -121,6 +121,9 @@ class GameViewController: UIViewController, UIScrollViewDelegate, UIGestureRecog
             Score.saveScore(Score(name: nameField.text!, time: currentTime))
             self.performSegueWithIdentifier("endGame", sender: nil)
         })
+        
+        // La sauvegarde est désactivée par défaut
+        saveAction.enabled = false
 
         // Ajoute un champ de texte a l'alerte pour entrer un nom
         alert.addTextFieldWithConfigurationHandler({ (field) in
